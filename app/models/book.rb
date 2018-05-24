@@ -9,6 +9,7 @@ class Book < ApplicationRecord
       :synopsis => self.synopsis,
       :author => self.author,
       :cover => self.image.url,
+      :stock => self.stock
     }
   end
 end
