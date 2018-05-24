@@ -5,6 +5,14 @@ class BooksController < ApplicationController
     render json: @books.jsonify, status: :ok
   end
 
+  def showall
+    @books = []
+    Book.all.each do |book|
+      @books << book.jsonify
+    end
+    render json: @books, status: :ok
+  end
+
   def showseveral
     @books = []
     Book.find_each(start: params[:start], finish: params[:finish]) do |book|
@@ -12,5 +20,10 @@ class BooksController < ApplicationController
     end
     render json: @books, status: :ok
   end
+
+  def borrow
+
+  end
+
 
 end
