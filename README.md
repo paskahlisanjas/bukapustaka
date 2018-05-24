@@ -1,26 +1,13 @@
-# README
+# VirtuLib (Backend)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Virtual library is an online library that allows the users to lend or return a book. The backend itself is built in ruby on rails.
 
-Things you may want to cover:
+# API access
 
-* Ruby version
+| Method | Route | Params | Usage |
+| --- | --- | --- | --- | ---|
+| GET | /books | - | to retrieve all the books recorded |
+| POST | /books | `start`, `finish` | to retrieve all the books which id is between `start` until `finish` |
+| GET | /books/`id` | - | to retrieve a book which id matches `id` |
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-#bukapustaka
-bukapustaka
+to be continued ...
