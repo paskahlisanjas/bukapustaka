@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   post 'books/' => 'books#showseveral'
   get 'books/' => 'books#showall'
   get 'books/:id/borrow' => 'books#borrow'
+  get 'books/:id/return' => 'books#return'
 
 end

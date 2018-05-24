@@ -1,8 +1,12 @@
 class BooksController < ApplicationController
 
   def show
-    @books = Book.find(params[:id])
-    render json: @books.jsonify, status: :ok
+    begin
+      @books = Book.find(params[:id])
+      render json: @books.jsonify, status: :ok
+    rescue ActiveRecord::RecordNotFound
+      render json: { message: 'Could not find the book with id = ' + params[:id] }, status: 404
+    end
   end
 
   def showall
@@ -22,8 +26,29 @@ class BooksController < ApplicationController
   end
 
   def borrow
-
+    begin
+      @books = Book.find(params[:id])
+      @books.stock -= 1
+      if @books.stock < 0
+        render json: { message: 'The book is out of stock' }, status: :ok
+        return
+      end
+      @books.save
+      render json: @books.jsonify, status: :ok
+    rescue ActiveRecord::RecordNotFound
+      render json: { message: 'Could not find the book with id = ' + params[:id] }, status: :ok
+    end
   end
 
+  def return
+    begin
+      @books = Book.find(params[:id])
+      @books.stock += 1
+      @books.save
+      render json: @books.jsonify, status: :ok
+    rescue ActiveRecord::RecordNotFound
+      render json: { message: 'Could not find the book with id = ' + params[:id] }, status: :ok
+    end
+  end
 
 end
