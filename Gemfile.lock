@@ -9,6 +9,12 @@ GIT
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
 
+GIT
+  remote: https://github.com/codahale/bcrypt-ruby.git
+  revision: 12a50f4ff20c1723cc08b3f3c5dcd257c305172c
+  specs:
+    bcrypt (3.1.12)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -150,6 +156,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt!
   bootsnap (>= 1.1.0)
   byebug
   listen (>= 3.0.5, < 3.2)

@@ -46,3 +46,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # paperclip to handle image file
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+
+# bcrypt to handle user's password encryption
+gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git'
