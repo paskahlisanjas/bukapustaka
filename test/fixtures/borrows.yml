@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  book: one
+  expiry_date: 2018-05-28 00:02:09
+
+two:
+  user: two
+  book: two
+  expiry_date: 2018-05-28 00:02:09
