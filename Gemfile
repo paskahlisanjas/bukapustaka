@@ -49,3 +49,8 @@ gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 
 # bcrypt to handle user's password encryption
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git'
+
+# Json Web Token
+gem 'jwt', git: 'https://github.com/jwt/ruby-jwt.git'
+
+gem 'pry-rails'
