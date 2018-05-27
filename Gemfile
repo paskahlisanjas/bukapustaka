@@ -54,3 +54,5 @@ gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git'
 gem 'jwt', git: 'https://github.com/jwt/ruby-jwt.git'
 
 gem 'pry-rails'
+
+gem 'pry-nav'
