@@ -56,3 +56,5 @@ gem 'jwt', git: 'https://github.com/jwt/ruby-jwt.git'
 gem 'pry-rails'
 
 gem 'pry-nav'
+
+gem 'rack-cors', git: 'https://github.com/cyu/rack-cors.git'

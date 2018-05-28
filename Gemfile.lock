@@ -16,6 +16,12 @@ GIT
     bcrypt (3.1.12)
 
 GIT
+  remote: https://github.com/cyu/rack-cors.git
+  revision: 59892c80dd3728ac5711375f00e776217a194a16
+  specs:
+    rack-cors (1.0.2)
+
+GIT
   remote: https://github.com/jwt/ruby-jwt.git
   revision: eef38b2fbe182fec8882519eece94e7da94fb478
   specs:
@@ -181,6 +187,7 @@ DEPENDENCIES
   pry-nav
   pry-rails
   puma (~> 3.11)
+  rack-cors!
   rails (~> 5.2.0)
   spring
   spring-watcher-listen (~> 2.0.0)

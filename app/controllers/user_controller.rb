@@ -1,5 +1,6 @@
 class UserController < ApplicationController
   def register
+    # binding.pry
     User.create!({
       :name => params[:name],
       :email => params[:email],
