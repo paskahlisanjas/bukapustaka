@@ -82,11 +82,7 @@
 
     begin
       books = []
-      # Borrow.where(user_id = auth_result[:user_id].to_s).joins('INNER JOIN books ON books.id = book_id').find_each do |borrow|
-        # books << borrow
-      # end
       Borrow.where(user_id=auth_result[:user_id].to_s).find_each do |borrow|
-        puts borrow
         book = Book.find(borrow.book_id).jsonify
         book[:borrowed_at] = borrow.created_at
         book[:expired_at] = borrow.expiry_date
