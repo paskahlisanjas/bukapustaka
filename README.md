@@ -2,6 +2,10 @@
 
 VirtuLib is an online library that allows the users to lend or return a book. The backend itself is built in ruby on rails.
 
+# ERD
+
+![GitHub Logo](/docs/database_diagram.png)
+
 # API access
 
 ### Book

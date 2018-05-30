@@ -58,3 +58,5 @@ gem 'pry-rails'
 gem 'pry-nav'
 
 gem 'rack-cors', git: 'https://github.com/cyu/rack-cors.git'
+
+gem 'rails-erd'
