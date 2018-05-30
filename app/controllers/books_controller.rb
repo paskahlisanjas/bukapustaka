@@ -64,7 +64,7 @@
       if borrow
         borrow.destroy
       else
-        raise ActiveRecord::RecordNotFound
+    t  raise ActiveRecord::RecordNotFound
       end
       books.save
       render json: books.jsonify, status: :ok
@@ -82,9 +82,15 @@
 
     begin
       books = []
+      # Borrow.where(user_id = auth_result[:user_id].to_s).joins('INNER JOIN books ON books.id = book_id').find_each do |borrow|
+        # books << borrow
+      # end
       Borrow.where(user_id=auth_result[:user_id].to_s).find_each do |borrow|
         puts borrow
-        books << Book.find(borrow.book_id)
+        book = Book.find(borrow.book_id).jsonify
+        book[:borrowed_at] = borrow.created_at
+        book[:expired_at] = borrow.expiry_date
+        books << book
       end
       render :json => books, :status => :ok
     rescue ActiveRecord::RecordNotFound
