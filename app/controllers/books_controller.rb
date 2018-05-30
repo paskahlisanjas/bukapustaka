@@ -58,14 +58,10 @@
     end
 
     begin
-      books = Book.find(params[:id])
+      borrow = Borrow.find(params[:borrow_id])
+      books = Book.find(borrow.book_id)
       books.stock += 1
-      borrow = Borrow.where(book=params[:id], user=auth_result[:user_id]).take
-      if borrow
-        borrow.destroy
-      else
-    t  raise ActiveRecord::RecordNotFound
-      end
+      borrow.destroy
       books.save
       render json: books.jsonify, status: :ok
     rescue ActiveRecord::RecordNotFound
@@ -84,6 +80,7 @@
       books = []
       Borrow.where(user_id=auth_result[:user_id].to_s).find_each do |borrow|
         book = Book.find(borrow.book_id).jsonify
+        book[:borrow_id] = borrow.id
         book[:borrowed_at] = borrow.created_at
         book[:expired_at] = borrow.expiry_date
         books << book

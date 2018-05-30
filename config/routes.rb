@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'books/borrowed/' => 'books#borrowed'
   get 'books/:id' => 'books#show'
   get 'books/:id/borrow' => 'books#borrow'
-  get 'books/:id/return' => 'books#return'
+  post 'books/return' => 'books#return'
 
   post 'login/' => 'authentication#login'
   get 'auth/' => 'authentication#authenticate'
