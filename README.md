@@ -14,6 +14,7 @@ VirtuLib is an online library that allows the users to lend or return a book. Th
 | ------ | ----- | ------ | ----- |
 | GET | /books | - | to retrieve all the books recorded |
 | POST | /books | `start`, `finish` | to retrieve all the books which id is between `start` and `finish` |
+| GET | /books/borrowed/ | - | to retrieve the books borrowed by user <b>(authorization needed)</b> |
 | GET | /books/`id` | - | to retrieve a book which id matches `id` |
 | GET | /books/`id`/borrow | - | to borrow a book which id matches `id` <b>(authorization needed)</b> |
 | GET | /books/`id`/return | - | to return a book which id matches `id` <b>(authorization needed)</b> |
